@@ -20,14 +20,17 @@
                 <form method="post">
                     <input type="text" name="tarefa" class="texto"
                      placeholder="Digite aqui algo pendente"
-                     maxlength="47"/>
+                     maxlength="47"
+                     minlength="2"
+                     required
+                     autofocus/>
                     <input type="submit" name="acao" value="+" class="submit"/>
                 </form>
 
                 <div class="tarefas-atuais">
-                    <% for(let i = 0; i < tarefasList.length; i++){ %>
+                    <% for(let i = 1; i < tarefasList.length; i++){ %>
 
-                        <p><%= tarefasList[i]%>  <a href='/deletar/<%=i%>'> ❌</a></p>
+                        <p> <span>  <%=i%> - </span><%= tarefasList[i]%>  <a href='/deletar/<%=i%>'> ❌</a></p>
     
     
                     <%} %> 
